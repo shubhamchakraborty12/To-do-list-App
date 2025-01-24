@@ -16,7 +16,16 @@ function addTask() {
     inputBox.value = "";
     saveData();
 }
+const addBtn = document.getElementById("ok");
+addBtn.addEventListener('click', () => {
+    addTask();
+});
 
+inputBox.addEventListener('keyup', (event) => {
+    if(event.which === 13) {
+        addTask();
+    }
+})
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
