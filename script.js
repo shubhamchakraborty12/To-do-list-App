@@ -11,7 +11,7 @@ function addTask() {
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.appendChild(span);
-        alert(inputBox.value + " is added in the list!!")
+        //alert(inputBox.value + " is added in the list!!")
     }
     inputBox.value = "";
     saveData();
