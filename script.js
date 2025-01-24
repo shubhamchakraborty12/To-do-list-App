@@ -1,19 +1,24 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 function addTask() {
-    if(inputBox.value === '') {
-        alert("Type something!!!");
-    }
-    else {
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listContainer.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
-    }
-    inputBox.value = "";
-    saveData();
+    inputBox.addEventListener('keyup', (e) => {
+        if(e.keyCode === 13) {
+            if(inputBox.value === '') {
+                alert("Type something!!!");
+            }
+            else {
+                let li = document.createElement("li");
+                li.innerHTML = inputBox.value;
+                listContainer.appendChild(li);
+                let span = document.createElement("span");
+                span.innerHTML = "\u00d7";
+                li.appendChild(span);
+                alert(inputBox.value + " is added in the list!!")
+            }
+            inputBox.value = "";
+            saveData();
+        }
+    });
 }
 
 listContainer.addEventListener("click", function(e){
